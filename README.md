@@ -1,171 +1,64 @@
-* Kubernetes Yaml Templates                                      :Cloud:
-:PROPERTIES:
-:type:     kubernetes
-:export_file_name: kubernetes-yaml-templates.pdf
-:END:
+* Kubernetes Yaml Templates
+
+- **PDF Link:** [kubernetes-yaml-templates.pdf](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/kubernetes-yaml-templates.pdf)
+- **Category:** [Cloud](https://cheatsheet.dennyzhang.com/category/cloud/)
+- **Blog URL:** [Kubernetes YAML Templates](https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates)
+- **Related Posts:**
+  - [Kubectl CheatSheet](https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4)
+  - [Kubernetes YAML](https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates)
+  - [#denny-cheatsheets](https://github.com/topics/denny-cheatsheets)
+- **Issues & Contributions:** [File an Issue](https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues) | [Star the Repo](https://github.com/dennyzhang/cheatsheet.dennyzhang.com)
+
+## Pod
+
+| Yaml | Summary |
+|-------------------------------|------------------------------------------------|
+| [pod/pod-dummy.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-dummy.yaml) | Start a dummy pod with a dead sleep loop |
+| [pod/pod-nginx.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-nginx.yaml) | Start a pod of sample app (nginx) |
+| [pod/pod-initcontainer-sysctl.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-initcontainer-sysctl.yaml) | Use initContainer to run sysctl when starting a Pod |
+| [pod/pod-healthcheck-nginx.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-healthcheck-nginx.yaml) | Start pod with TCP and HTTP healthcheck |
+| [pod/pod-secrets.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-secrets.yaml) | Use secrets as volumes or environment variables |
+| [pod/pod-gitclone.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-gitclone.yaml) | Use initContainer as sidecar to web host a git repo |
+| [pod/pod-hostaliases.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-hostaliases.yaml) | Add alias to /etc/hosts |
+| [pod/pod-serviceaccount.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-serviceaccount.yaml) | Start pod with serviceaccount |
+| [pod/pod-handlers.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-handlers.yaml) | Pod's events whenever it starts or stops |
+
+Reference: [Kubectl CheatSheet](https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4)
+
+## Volume
+
+| Yaml | Summary |
+|--------------------------------------|----------------------------------------------------|
+| [volume/volume-manual-pv.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-manual-pv.yaml) | Create PV first, then PVC |
+| [volume/volume-mount-localpath.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-mount-localpath.yaml) | Mount a local folder to pods |
+| [volume/volume-emptydir.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-emptydir.yaml) | Create an empty folder and mount to pods |
+| [volume/volume-ebs.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-ebs.yaml) | Mount EBS volume to a pod in the same AZ |
+| [volume/volume-nfs.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-nfs.yaml) | Create NFS PV |
+| [volume/volume-gcePersistentDisk.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-gcePersistentDisk.yaml) | Mount GCE disk to a pod |
+| [volume/volume-digitalocean.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-digitalocean.yaml) | Create DigitalOcean volume for Kubernetes cluster |
+
+Reference: [Kubectl CheatSheet](https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4) | [Volumes Examples](https://github.com/kubernetes/examples/tree/master/staging/volumes)
+
+## Service
+
+| Yaml | Summary |
+|---------------------------------|-------------------------------|
+| [service/service-loadbalancer.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-loadbalancer.yaml) | LoadBalancer Service |
+| [service/service-nodeport.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-nodeport.yaml) | NodePort Service |
+| [service/service-ingress.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-ingress.yaml) | Ingress Service |
+| [service/service-clusterip-nginx.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-clusterip-nginx.yaml) | ClusterIP Service for nginx |
+| [service/service-cassandra.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-cassandra.yaml) | Cassandra Service |
+
+Reference: [Kubectl CheatSheet](https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4)
+
+## ConfigMap & Environments
+
+| Yaml | Summary |
+|----------------------------------|------------------------------------------|
+| [config/pod-configmap.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/pod-configmap.yaml) | Create ConfigMap and use as pod volume |
+| [config/pod-environment-var.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/pod-environment-var.yaml) | Pass environment variables to a pod |
+| [config/pod-env-metada.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/pod-env-metada.yaml) | Expose metadata to pods |
+| [config/configmap-plaintext.yaml](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/configmap-plaintext.yaml) | Define ConfigMap with plain text |
 
 
-## Personal Notes
-Will keep including kubernetes templates and best practices.
 
-
-## Originl Readme
-
-- PDF Link: [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/kubernetes-yaml-templates.pdf][kubernetes-yaml-templates.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
-- Blog URL: https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-
-File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Pod
-| Yaml                              | Summary                                                          |
-|-----------------------------------+------------------------------------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-dummy.yaml][pod/pod-dummy.yaml]]                | Start a dummy pod with a dead sleep loop                         |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-nginx.yaml][pod/pod-nginx.yaml]]                | Start a pod of sample app(nginx)                                 |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-initcontainer-sysctl.yaml][pod/pod-initcontainer-sysctl.yaml]] | Use initContainer to run sysctl, when starting a Pod             |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-healthcheck-nginx.yaml][pod/pod-healthcheck-nginx.yaml]]    | Start pod with tcp and http healthcheck                          |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-secrets.yaml][pod/pod-secrets.yaml]]              | Pod use secrets as either volumes or environment variables       |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-gitclone.yaml][pod/pod-gitclone.yaml]]             | Pod: use initContainer as sidecar to web host a git repo         |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-hostaliases.yaml][pod/pod-hostaliases.yaml]]          | Pod: add alias to /etc/hosts                                     |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-serviceaccount.yaml][pod/pod-serviceaccount.yaml]]       | Start pod with serviceaccount, instead of default serviceaccount |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/pod/pod-handlers.yaml][pod/pod-handlers.yaml]]             | Pod's events whenever it get started or stoppped                 |
-| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]                                         |
-** Volume
-| Yaml                                 | Summary                                                                |
-|--------------------------------------+------------------------------------------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-manual-pv.yaml][volume/volume-manual-pv.yaml]]         | Create pv first, then pvc                                              |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-mount-localpath.yaml][volume/volume-mount-localpath.yaml]]   | Mount a local folder to pods                                           |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-emptydir.yaml][volume/volume-emptydir.yaml]]          | Create a empty folder, then mount to pods                              |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-ebs.yaml][volume/volume-ebs.yaml]]               | Mount EBS volume to pod running in amazon instance with the same AZ    |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-nfs.yaml][volume/volume-nfs.yaml]]               | Create nfs pv                                                          |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-gcePersistentDisk.yaml][volume/volume-gcePersistentDisk.yaml]] | Mount GCE disk to pod running in amazon instance with the same AZ      |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/volume/volume-digitalocean.yaml][volume/volume-digitalocean.yaml]]      | Create DigitalOcean volume for your kubernetes cluster in DigitalOcean |
-| Reference                            | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]], [[https://github.com/kubernetes/examples/tree/master/staging/volumes][Link: volumes examples]]                       |
-** Service
-| Yaml                                 | Summary                       |
-|--------------------------------------+-------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-loadbalancer.yaml][service/service-loadbalancer.yaml]]    | Service: loadbalancer         |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-nodeport.yaml][service/service-nodeport.yaml]]        | Service: nodeport             |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-ingress.yaml][service/service-ingress.yaml]]         | Service: ingress              |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-clusterip-nginx.yaml][service/service-clusterip-nginx.yaml]] | Service: nginx with clusterip |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/service/service-cassandra.yaml][service/service-cassandra.yaml]]       | Service: cassandra            |
-| Reference                            | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]      |
-** Configmap/Envs
-| Yaml                            | Summary                                                 |
-|---------------------------------+---------------------------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/pod-configmap.yaml][config/pod-configmap.yaml]]       | Create configmap from file, then use it as a pod volume |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/pod-environment-var.yaml][config/pod-environment-var.yaml]] | Start a pod passing environment variables               |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/pod-env-metada.yaml][config/pod-env-metada.yaml]]      | Expose metadata to pods                                 |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/config/configmap-plaintext.yaml][config/configmap-plaintext.yaml]] | Define configmap with plain text                        |
-** Security - RBAC
-| Yaml                             | Summary                         |
-|----------------------------------+---------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/rbac/serviceaccount-default.yaml][rbac/serviceaccount-default.yaml]] | Serviceaccount: basic usage     |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/rbac/rbac-default.yaml][rbac/rbac-default.yaml]]           | Serviceaccount: concret example |
-| Reference                        | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]        |
-** Security - PodSecurityPolicy
-| Yaml                                    | Summary                                                         |
-|-----------------------------------------+-----------------------------------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/securitycontext-user.yaml][podsecurity/securitycontext-user.yaml]]   | Configure userid, at both pod and container levels              |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-privileged.yaml][podsecurity/podsecurity-privileged.yaml]] | Create pod security with privileged access                      |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-restricted.yaml][podsecurity/podsecurity-restricted.yaml]] | Create pod security with restricted access, then apply it later |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-enforce.yaml][podsecurity/podsecurity-enforce.yaml]]    | Enforce policy security by defining role and cluster role       |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-advanced.yaml][podsecurity/podsecurity-advanced.yaml]]   | A more complicated definition of pod security policy            |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-example.yaml][podsecurity/podsecurity-example.yaml]]    | A full example with everything included                         |
-| Links                                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]                                        |
-#+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
-#+END_HTML
-** Security - NetworkPolicy
-| Yaml                                                      | Summary                                                             |
-|-----------------------------------------------------------+---------------------------------------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-denyall-ingress.yaml][networksecurity/networksecurity-denyall-ingress.yaml]]      | Allow all ingress                                                   |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-allowall-ingress.yaml][networksecurity/networksecurity-allowall-ingress.yaml]]     | Deny all ingress                                                    |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-denyall.yaml][networksecurity/networksecurity-denyall.yaml]]              | Deny all ingress and egress                                         |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-pod.yaml][networksecurity/networksecurity-pod.yaml]]                  | Whitelist traffic control                                           |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-complicated.yaml][networksecurity/networksecurity-complicated.yaml]]          | A comprehensive network policy example                              |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-port.yaml][networksecurity/networksecurity-port.yaml]]                 | Allow TCP 443 from one namespace                                    |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-deny-othernamespaces.yaml][networksecurity/networksecurity-deny-othernamespaces.yaml]] | Deny all ingress traffic from other namespaces                      |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-denyegress-exceptdns.yaml][networksecurity/networksecurity-denyegress-exceptdns.yaml]] | Deny all egress traffic except DNS                                  |
-| Reference                                                 | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]], [[https://github.com/ahmetb/kubernetes-network-policy-recipes][GitHub: kubernetes-network-policy-recipes]] |
-
-** Quota & Limits
-| Yaml                                      | Summary                                               |
-|-------------------------------------------+-------------------------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/quota/limitrange-pvc-size.yaml][quota/limitrange-pvc-size.yaml]]            | LimitRange: PVC size                                  |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/quota/limitrange-pvc-cumulative-size.yaml][quota/limitrange-pvc-cumulative-size.yaml]] | ResourceQuota: pvc count and storage size             |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/quota/limitrange-mem-size.yaml][quota/limitrange-mem-size.yaml]]            | LimitRange: Pod ram usage. Then apply it to namespace |
-| Reference                                 | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]                              |
-** Deployment
-| Yaml                             | Summary                      |
-|----------------------------------+------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/deployment/deployment-nginx.yaml][deployment/deployment-nginx.yaml]] | Deploy nginx with 2 replicas |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/deployment/deployment-mysql.yaml][deployment/deployment-mysql.yaml]] | Deploy mysql                 |
-| Reference                        | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]     |
-** Statefulset
-| Yaml                                              | Summary                              |
-|---------------------------------------------------+--------------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/statefulset/statefulset-nginx.yaml][statefulset/statefulset-nginx.yaml]]                | Statefulset: nginx                   |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/statefulset/statefulset-single-mysql][statefulset/statefulset-single-mysql]]              | Statefulset: mysql                   |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/statefulset/statefulset-replicated-cassandra.yaml][statefulset/statefulset-replicated-cassandra.yaml]] | Statefulset: single cassandra        |
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/statefulset/statefulset-replicated-mysql][statefulset/statefulset-replicated-mysql]]          | Statefulset: cassandra with replicas |
-| Reference                                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]             |
-** Jobs & CronJob
-| Yaml                  | Summary                         |
-|-----------------------+---------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/job/job-affinity.yaml][job/job-affinity.yaml]] | Deploy a job with node affinity |
-** HorizontalPodAutoscaler
-| Yaml                  | Summary                         |
-|-----------------------+---------------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/hpa/hpa-nginx.yaml][hpa/hpa-nginx.yaml]] | Deploy a horizontal pod autoscaler for nginx deployment |
-** Adhoc
-| Yaml                    | Summary                  |
-|-------------------------+--------------------------|
-| [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/namespace/ns-dummy.yaml][namespace/ns-dummy.yaml]] | Create a dummy namespace |
-** Related Tools
-| Name                              | Summary                                         |
-|-----------------------------------+-------------------------------------------------|
-| [[https://github.com/kubernetes-sigs/kustomize][GitHub: kubernetes-sigs/kustomize]] | Customization of kubernetes YAML configurations |
-
-** More Resources
-License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-
-#+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
-#+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION:
-#+KEYWORDS:
-#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
-#+LaTeX_CLASS_OPTIONS: [8pt]
-#+LATEX_HEADER: \usepackage[english]{babel}
-#+LATEX_HEADER: \usepackage{lastpage}
-#+LATEX_HEADER: \usepackage{fancyhdr}
-#+LATEX_HEADER: \pagestyle{fancy}
-#+LATEX_HEADER: \fancyhf{}
-#+LATEX_HEADER: \rhead{Updated: \today}
-#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/kubernetes-yaml-templates}{GitHub: https://github.com/dennyzhang/kubernetes-yaml-templates}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates}{Blog URL: https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates}}
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:
-#+LINK_HOME:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* update more link: https://github.com/uruddarraju/kubernetes-rbac-policies :noexport:
-* service with loadbalancer                                        :noexport:
-* DONE [#A] k8s yaml file                                          :noexport:
-  CLOSED: [2017-12-01 Fri 22:45]
-http://containertutorials.com/get_started_kubernetes/k8s_example.html
-https://www.mirantis.com/blog/introduction-to-yaml-creating-a-kubernetes-deployment/
-https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
-* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO yaml cheatsheet: https://jimmysong.io/cheatsheets/yaml      :noexport:
