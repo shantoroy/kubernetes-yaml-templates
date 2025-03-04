@@ -1,4 +1,11 @@
-* Kubernetes Yaml Templates
+# Kubernetes Yaml Templates
+
+## Updates from the fork
+1. Cleaned the ReadMe
+2. Included [common practices](https://github.com/antonputra/tutorials/tree/main/lessons/171) by Antonputra
+3. TBD... 
+
+## Notes from Original ReadMe
 
 - **PDF Link:** [kubernetes-yaml-templates.pdf](https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/kubernetes-yaml-templates.pdf)
 - **Category:** [Cloud](https://cheatsheet.dennyzhang.com/category/cloud/)
